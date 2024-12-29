@@ -13,6 +13,10 @@ pkg.main = "./src/index.ts";
 
 pkg.exports = {
   ".": "./src/index.ts",
+  "./db": {
+    import: "./src/db/index.ts",
+    require: "./dist/db/index.cjs.js",
+  },
 };
 
 fs.writeFileSync(packagePath, JSON.stringify(pkg, null, 2));

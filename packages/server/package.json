@@ -2,20 +2,13 @@
   "name": "@chicky/server",
   "version": "1.0.0",
   "private": true,
-  "main": "./dist/index.js",
+  "main": "./src/index.ts",
   "type": "module",
   "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs.js"
-    },
-    "./*": {
-      "import": "./dist/*",
-      "require": "./dist/*.cjs"
-    },
-    "./dist": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs.js"
+    ".": "./src/index.ts",
+    "./db": {
+      "import": "./src/db/index.ts",
+      "require": "./dist/db/index.cjs.js"
     }
   },
   "scripts": {
@@ -33,10 +26,12 @@
     "drizzle-orm": "^0.36.3",
     "drizzle-zod": "^0.5.1",
     "nanoid": "^5.0.8",
+    "pg": "^8.13.1",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20.17.6",
+    "@types/pg": "^8.11.10",
     "esbuild": "^0.24.0",
     "esbuild-plugin-alias": "^0.2.1",
     "tsc-alias": "^1.8.10",
