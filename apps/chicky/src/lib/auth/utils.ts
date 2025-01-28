@@ -42,7 +42,7 @@ export const checkAuth = async () => {
 export const genericError = (e?: any) => {
   return {
     success: false,
-    error: `Error, ${e instanceof Error ? e.message : "please try again later."}`,
+    error: `Error, ${e instanceof Error ? e.message || e : "please try again later."}`,
   } as { success: false; error: string };
 };
 
